@@ -7,30 +7,30 @@
 var totaleNumeriRandom = 5;
 
 var numeriCasuali = numeriRandom(totaleNumeriRandom);
-alert(numeriCasuali);
+ alert(numeriCasuali);
 
 
 
-setTimeout(inserisciNumeri, 3000);
-
-// var listaNumeriUtente = setTimeout(inserisciNumeri, 3000);
-// clearTimeout(listaNumeriUtente)
-// console.log(listaNumeriUtente);
-
-
-var listaFunzione = inserisciNumeri();
-console.log(listaFunzione);
-//Creo una funzione che mi generi tanti prompt quanti sono i numeri che ho visualizzato all'inizio
-function inserisciNumeri() {
-  var listaNumeriImmessi = [];
-  for (var i = 0; i < totaleNumeriRandom; i++) {
+setTimeout(function() {
+  var listaNumeriVincenti = []
+    for (var i = 0; i < totaleNumeriRandom; i++) {
     var numeroImmesso = parseInt(prompt('Inserisci i numeri che hai visto'));
-    listaNumeriImmessi .push(numeroImmesso);
-    console.log(listaNumeriImmessi);
 
-  }
-return listaNumeriImmessi;
-}
+    // console.log(listaNumeriImmessi);
+      if (numeroImmesso === numeriCasuali[i]) {
+        listaNumeriVincenti.push(numeroImmesso);
+        console.log( 'I numeri indovinati sono '+ listaNumeriVincenti + '-' + 'il Totale dei  numeri indovinati sono ' + listaNumeriVincenti.length);
+      }else {
+        console.log( 'i numeri sono errati');
+      }
+    }
+
+    return listaNumeriVincenti;
+
+}, 3000);
+
+
+
 
 //Creo una funzione che mi generi 5 numeri casuali e li metta in un array
 function numeriRandom(numero) {
