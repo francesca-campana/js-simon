@@ -12,19 +12,22 @@ var numeriCasuali = numeriRandom(totaleNumeriRandom);
 
 
 setTimeout(function() {
-  var listaNumeriVincenti = []
+  var listaNumeriVincenti = [];
+  var listaNumeriErrati = [];
     for (var i = 0; i < totaleNumeriRandom; i++) {
     var numeroImmesso = parseInt(prompt('Inserisci i numeri che hai visto'));
 
     // console.log(listaNumeriImmessi);
-      if (numeroImmesso === numeriCasuali[i]) {
+      if (numeriCasuali.includes(numeroImmesso)) {
         listaNumeriVincenti.push(numeroImmesso);
-        console.log( 'I numeri indovinati sono '+ listaNumeriVincenti + '-' + 'il Totale dei  numeri indovinati sono ' + listaNumeriVincenti.length);
+
       }else {
-        console.log( 'i numeri sono errati');
+        listaNumeriErrati.push(numeroImmesso);
+
       }
     }
-
+    console.log( 'I numeri indovinati sono '+ listaNumeriVincenti  + ' il Totale dei  numeri indovinati sono ' + listaNumeriVincenti.length);
+    console.log( 'I numeri errati sono ' + listaNumeriErrati );
     return listaNumeriVincenti;
 
 }, 3000);
