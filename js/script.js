@@ -9,17 +9,24 @@ var totaleNumeriRandom = 5;
 var numeriCasuali = numeriRandom(totaleNumeriRandom);
 alert(numeriCasuali);
 
+
+
 setTimeout(inserisciNumeri, 3000);
 
-listaNumerImmessiUtente = inserisciNumeri();
-console.log(listaNumerImmessiUtente);
+// var listaNumeriUtente = setTimeout(inserisciNumeri, 3000);
+// clearTimeout(listaNumeriUtente)
+// console.log(listaNumeriUtente);
+
+
+var listaFunzione = inserisciNumeri();
+console.log(listaFunzione);
 //Creo una funzione che mi generi tanti prompt quanti sono i numeri che ho visualizzato all'inizio
 function inserisciNumeri() {
   var listaNumeriImmessi = [];
   for (var i = 0; i < totaleNumeriRandom; i++) {
     var numeroImmesso = parseInt(prompt('Inserisci i numeri che hai visto'));
     listaNumeriImmessi .push(numeroImmesso);
-    console.log(numeroImmesso);
+    console.log(listaNumeriImmessi);
 
   }
 return listaNumeriImmessi;
